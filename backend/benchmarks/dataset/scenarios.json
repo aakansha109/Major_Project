@@ -1,0 +1,1237 @@
+{
+  "version": "1.0.0",
+  "description": "Chronos Memory Reproducible Evaluation Benchmark Dataset. Structured for expansion from 35 to 150+ scenarios.",
+  "target_total_capacity": 150,
+  "scenarios": [
+    {
+      "scenario_id": "scen_001",
+      "category": "software_stacks",
+      "title": "Backend Framework Migration",
+      "description": "User transitions from Flask to FastAPI with explicit contradiction resolution.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_001",
+          "speaker": "User",
+          "text": "My backend framework is Flask.",
+          "timestamp": "2022-01-15T10:00:00Z"
+        },
+        {
+          "session_id": "sess_001",
+          "speaker": "User",
+          "text": "I switched my backend framework to FastAPI.",
+          "timestamp": "2024-03-01T14:30:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "backend_framework", "object": "FastAPI" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "backend_framework", "object": "Flask" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What backend framework do I use now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["FastAPI"],
+          "forbidden_keywords": ["Flask is your current"]
+        },
+        {
+          "query": "What framework did I use before?",
+          "target_temporal_state": "historical",
+          "expected_keywords": ["Flask"],
+          "forbidden_keywords": ["FastAPI is what you used before"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_002",
+      "category": "software_stacks",
+      "title": "Database Architecture Migration",
+      "description": "Primary operational database migration from PostgreSQL to DynamoDB.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_002",
+          "speaker": "User",
+          "text": "We store our core application data in PostgreSQL.",
+          "timestamp": "2021-06-10T09:00:00Z"
+        },
+        {
+          "session_id": "sess_002",
+          "speaker": "User",
+          "text": "We migrated our database from PostgreSQL to DynamoDB for serverless scaling.",
+          "timestamp": "2023-11-20T16:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "database", "object": "DynamoDB" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "database", "object": "PostgreSQL" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What database do we use now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["DynamoDB"],
+          "forbidden_keywords": ["PostgreSQL is current"]
+        },
+        {
+          "query": "What database did we use previously?",
+          "target_temporal_state": "historical",
+          "expected_keywords": ["PostgreSQL"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_003",
+      "category": "software_stacks",
+      "title": "Frontend Framework Evolution",
+      "description": "User updates frontend from Vue.js to Next.js.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_003",
+          "speaker": "User",
+          "text": "Our web application frontend is built with Vue.js.",
+          "timestamp": "2022-04-01T11:00:00Z"
+        },
+        {
+          "session_id": "sess_003",
+          "speaker": "User",
+          "text": "We recently transitioned our frontend stack to Next.js.",
+          "timestamp": "2024-05-12T10:15:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "frontend_framework", "object": "Next.js" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "frontend_framework", "object": "Vue.js" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What frontend framework do we use now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Next.js"],
+          "forbidden_keywords": ["Vue.js is your current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_004",
+      "category": "software_stacks",
+      "title": "Cloud Provider Switch",
+      "description": "Enterprise cloud platform transition from AWS to Google Cloud.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_004",
+          "speaker": "User",
+          "text": "All our microservices run on AWS.",
+          "timestamp": "2020-08-15T08:00:00Z"
+        },
+        {
+          "session_id": "sess_004",
+          "speaker": "User",
+          "text": "We moved all infrastructure from AWS to Google Cloud.",
+          "timestamp": "2023-09-01T12:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "cloud_provider", "object": "Google Cloud" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "cloud_provider", "object": "AWS" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What cloud provider do we run on now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Google Cloud"],
+          "forbidden_keywords": ["AWS is your current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_005",
+      "category": "software_stacks",
+      "title": "Primary Language Modernization",
+      "description": "Modernizing Android development language from Java to Kotlin.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_005",
+          "speaker": "User",
+          "text": "I write my Android applications in Java.",
+          "timestamp": "2019-03-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_005",
+          "speaker": "User",
+          "text": "I switched my primary Android language to Kotlin.",
+          "timestamp": "2022-07-20T15:30:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "primary_language", "object": "Kotlin" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "primary_language", "object": "Java" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What language do I write Android apps in now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Kotlin"],
+          "forbidden_keywords": ["Java is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_006",
+      "category": "location_changes",
+      "title": "International Relocation",
+      "description": "Alice moves from Seattle to London.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_006",
+          "speaker": "User",
+          "text": "Alice moved to Seattle in 2020.",
+          "timestamp": "2020-02-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_006",
+          "speaker": "User",
+          "text": "Alice moved to London in 2023.",
+          "timestamp": "2023-04-15T14:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Alice", "predicate": "lives_in", "object": "London" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Alice", "predicate": "lives_in", "object": "Seattle" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Where does Alice live now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["London"],
+          "forbidden_keywords": ["Seattle is where Alice lives now"]
+        },
+        {
+          "query": "Where did Alice live previously?",
+          "target_temporal_state": "historical",
+          "expected_keywords": ["Seattle"],
+          "forbidden_keywords": ["London is where Alice lived previously"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_007",
+      "category": "location_changes",
+      "title": "Multi-Hop Global Relocation",
+      "description": "Bob moves across three cities: New York -> Berlin -> Tokyo.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_007",
+          "speaker": "User",
+          "text": "Bob lived in New York.",
+          "timestamp": "2018-05-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_007",
+          "speaker": "User",
+          "text": "Bob moved to Berlin in 2021.",
+          "timestamp": "2021-08-10T11:00:00Z"
+        },
+        {
+          "session_id": "sess_007",
+          "speaker": "User",
+          "text": "Bob moved to Tokyo in 2024.",
+          "timestamp": "2024-02-15T09:30:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Bob", "predicate": "lives_in", "object": "Tokyo" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Bob", "predicate": "lives_in", "object": "New York" },
+        { "subject": "Bob", "predicate": "lives_in", "object": "Berlin" }
+      ],
+      "expected_contradictions": 2,
+      "expected_test_queries": [
+        {
+          "query": "Where does Bob live now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Tokyo"],
+          "forbidden_keywords": ["Berlin is current", "New York is current"]
+        },
+        {
+          "query": "Show the history of where Bob lived.",
+          "target_temporal_state": "evolution",
+          "expected_keywords": ["New York", "Berlin", "Tokyo"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_008",
+      "category": "location_changes",
+      "title": "Temporary Vacation vs Permanent Residence",
+      "description": "User lives in Chicago and visits Paris temporarily without losing residence.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_008",
+          "speaker": "User",
+          "text": "I live in Chicago.",
+          "timestamp": "2023-01-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_008",
+          "speaker": "User",
+          "text": "I am traveling to Paris for a three-day conference.",
+          "timestamp": "2023-06-15T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "lives_in", "object": "Chicago" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where do I live now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Chicago"],
+          "forbidden_keywords": ["Paris"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_009",
+      "category": "location_changes",
+      "title": "Corporate Office Transfer",
+      "description": "Employee transfers from Mountain View office to Zurich campus.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_009",
+          "speaker": "User",
+          "text": "Elena works at the Mountain View office.",
+          "timestamp": "2021-03-01T09:00:00Z"
+        },
+        {
+          "session_id": "sess_009",
+          "speaker": "User",
+          "text": "Elena transferred to the Zurich office.",
+          "timestamp": "2023-10-01T14:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Elena", "predicate": "office_location", "object": "Zurich" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Elena", "predicate": "office_location", "object": "Mountain View" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Which office does Elena work at now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Zurich"],
+          "forbidden_keywords": ["Mountain View is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_010",
+      "category": "location_changes",
+      "title": "Remote Work Relocation",
+      "description": "Transitioning from San Francisco to Denver.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_010",
+          "speaker": "User",
+          "text": "I currently reside in San Francisco.",
+          "timestamp": "2022-05-10T12:00:00Z"
+        },
+        {
+          "session_id": "sess_010",
+          "speaker": "User",
+          "text": "I bought a house in Denver and moved there.",
+          "timestamp": "2024-04-01T15:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "lives_in", "object": "Denver" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "lives_in", "object": "San Francisco" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Where do I live now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Denver"],
+          "forbidden_keywords": ["San Francisco is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_011",
+      "category": "employment",
+      "title": "Tech Employer Transition",
+      "description": "Bob switches employment from Google to OpenAI.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_011",
+          "speaker": "User",
+          "text": "Bob joined Google in 2019.",
+          "timestamp": "2019-06-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_011",
+          "speaker": "User",
+          "text": "Bob joined OpenAI in 2024.",
+          "timestamp": "2024-01-10T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Bob", "predicate": "works_at", "object": "OpenAI" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Bob", "predicate": "works_at", "object": "Google" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Where does Bob work now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["OpenAI"],
+          "forbidden_keywords": ["Google is current"]
+        },
+        {
+          "query": "Where did Bob work before?",
+          "target_temporal_state": "historical",
+          "expected_keywords": ["Google"],
+          "forbidden_keywords": ["OpenAI is where Bob worked before"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_012",
+      "category": "employment",
+      "title": "Internal Role Promotion",
+      "description": "Charlie promoted from Senior Engineer to Engineering Manager.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_012",
+          "speaker": "User",
+          "text": "Charlie is a Senior Engineer.",
+          "timestamp": "2021-02-15T09:00:00Z"
+        },
+        {
+          "session_id": "sess_012",
+          "speaker": "User",
+          "text": "Charlie was promoted to Engineering Manager.",
+          "timestamp": "2023-08-01T11:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Charlie", "predicate": "role_title", "object": "Engineering Manager" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Charlie", "predicate": "role_title", "object": "Senior Engineer" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What is Charlie's role now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Engineering Manager"],
+          "forbidden_keywords": ["Senior Engineer is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_013",
+      "category": "employment",
+      "title": "Corporate Resignation",
+      "description": "Ian leaves Microsoft without immediately joining another firm.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_013",
+          "speaker": "User",
+          "text": "Ian works at Microsoft.",
+          "timestamp": "2020-04-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_013",
+          "speaker": "User",
+          "text": "Ian left Microsoft in 2022.",
+          "timestamp": "2022-12-15T16:00:00Z"
+        }
+      ],
+      "expected_active_facts": [],
+      "expected_historical_facts": [
+        { "subject": "Ian", "predicate": "works_at", "object": "Microsoft" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Where did Ian work in 2021?",
+          "target_temporal_state": "point_in_time",
+          "expected_keywords": ["Microsoft"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_014",
+      "category": "employment",
+      "title": "Academic Appointment",
+      "description": "Dr. Smith appointed Head of AI Research.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_014",
+          "speaker": "User",
+          "text": "Dr. John Smith was a Postdoctoral Fellow.",
+          "timestamp": "2020-09-01T09:00:00Z"
+        },
+        {
+          "session_id": "sess_014",
+          "speaker": "User",
+          "text": "Due to recent restructuring, Dr. John Smith was appointed Head of AI Research.",
+          "timestamp": "2024-07-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "John Smith", "predicate": "role_title", "object": "Head of AI Research" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "John Smith", "predicate": "role_title", "object": "Postdoctoral Fellow" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What is John Smith's role now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Head of AI Research"],
+          "forbidden_keywords": ["Postdoctoral Fellow"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_015",
+      "category": "employment",
+      "title": "Startup Founder Transition",
+      "description": "Maya leaves Stripe to found ChronosAI.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_015",
+          "speaker": "User",
+          "text": "Maya is employed at Stripe as a Principal Architect.",
+          "timestamp": "2021-05-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_015",
+          "speaker": "User",
+          "text": "Maya left Stripe and founded ChronosAI as CEO.",
+          "timestamp": "2024-02-10T12:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Maya", "predicate": "works_at", "object": "ChronosAI" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Maya", "predicate": "works_at", "object": "Stripe" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Where does Maya work now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["ChronosAI"],
+          "forbidden_keywords": ["Stripe is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_016",
+      "category": "projects",
+      "title": "Project Lead Assignment",
+      "description": "Assigning lead ownership of Project Apollo.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_016",
+          "speaker": "User",
+          "text": "Evan is leading the Apollo project.",
+          "timestamp": "2024-05-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Evan", "predicate": "leads_project", "object": "Apollo" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Who is leading Project Apollo?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Evan"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_017",
+      "category": "projects",
+      "title": "Project Handover",
+      "description": "Evan hands off Project Apollo to Diana and takes on Project Artemis.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_017",
+          "speaker": "User",
+          "text": "Evan is the tech lead for Project Apollo.",
+          "timestamp": "2023-01-15T09:00:00Z"
+        },
+        {
+          "session_id": "sess_017",
+          "speaker": "User",
+          "text": "Evan handed off Project Apollo to Diana and now leads Project Artemis.",
+          "timestamp": "2024-04-10T11:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Evan", "predicate": "leads_project", "object": "Artemis" },
+        { "subject": "Diana", "predicate": "leads_project", "object": "Apollo" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Evan", "predicate": "leads_project", "object": "Apollo" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "Which project does Evan lead now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Artemis"],
+          "forbidden_keywords": ["Apollo is what Evan leads now"]
+        },
+        {
+          "query": "Who leads Project Apollo now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Diana"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_018",
+      "category": "projects",
+      "title": "Project Deprecation",
+      "description": "Project Titan is sunsetted and archived.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_018",
+          "speaker": "User",
+          "text": "We are actively developing Project Titan.",
+          "timestamp": "2022-03-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_018",
+          "speaker": "User",
+          "text": "Project Titan has been officially sunsetted and deprecated.",
+          "timestamp": "2023-12-01T14:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Project Titan", "predicate": "status", "object": "deprecated" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "Project Titan", "predicate": "status", "object": "active" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What is the status of Project Titan now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["deprecated"],
+          "forbidden_keywords": ["active development"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_019",
+      "category": "projects",
+      "title": "Cross-Functional Working Group",
+      "description": "Staff engineer appointed to Security Guild.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_019",
+          "speaker": "User",
+          "text": "Rachel was appointed lead of the Security Guild.",
+          "timestamp": "2024-03-15T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Rachel", "predicate": "leads_group", "object": "Security Guild" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Who leads the Security Guild?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Rachel"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_020",
+      "category": "non_conflicting_additions",
+      "title": "Multi-Language Skill Coexistence",
+      "description": "User learns Rust in addition to Python; both remain active concurrently.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_020",
+          "speaker": "User",
+          "text": "I code daily in Python.",
+          "timestamp": "2021-01-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_020",
+          "speaker": "User",
+          "text": "I also started learning and writing Rust for systems tools.",
+          "timestamp": "2023-05-15T14:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "uses_language", "object": "Python" },
+        { "subject": "User", "predicate": "uses_language", "object": "Rust" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What languages do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Python", "Rust"],
+          "forbidden_keywords": ["superseded"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_021",
+      "category": "non_conflicting_additions",
+      "title": "Hardware Device Coexistence",
+      "description": "User owns a MacBook Pro and acquires an external 4K monitor.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_021",
+          "speaker": "User",
+          "text": "I work on a MacBook Pro M3.",
+          "timestamp": "2024-01-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_021",
+          "speaker": "User",
+          "text": "I added a Dell UltraSharp 4K monitor to my desk setup.",
+          "timestamp": "2024-03-20T11:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "uses_hardware", "object": "MacBook Pro M3" },
+        { "subject": "User", "predicate": "uses_hardware", "object": "Dell UltraSharp 4K" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What hardware equipment do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["MacBook Pro", "Dell UltraSharp"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_022",
+      "category": "non_conflicting_additions",
+      "title": "Concurrent Multi-Repo Contribution",
+      "description": "Engineer contributes to both Chronos Core and Chronos Web frontend simultaneously.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_022",
+          "speaker": "User",
+          "text": "I contribute to the chronos-core repository.",
+          "timestamp": "2024-01-05T09:00:00Z"
+        },
+        {
+          "session_id": "sess_022",
+          "speaker": "User",
+          "text": "I am also a core maintainer of the chronos-web repository.",
+          "timestamp": "2024-02-12T16:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "maintains_repo", "object": "chronos-core" },
+        { "subject": "User", "predicate": "maintains_repo", "object": "chronos-web" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Which repositories do I maintain?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["chronos-core", "chronos-web"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_023",
+      "category": "non_conflicting_additions",
+      "title": "Family Relations Coexistence",
+      "description": "George marries Hannah and welcomes daughter Maya.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_023",
+          "speaker": "User",
+          "text": "George married Hannah in 2021.",
+          "timestamp": "2021-08-20T10:00:00Z"
+        },
+        {
+          "session_id": "sess_023",
+          "speaker": "User",
+          "text": "George and Hannah had a daughter named Maya in 2023.",
+          "timestamp": "2023-11-10T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "George", "predicate": "married_to", "object": "Hannah" },
+        { "subject": "George", "predicate": "parent_of", "object": "Maya" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Who is George married to?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Hannah"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_024",
+      "category": "non_conflicting_additions",
+      "title": "Dual DevOps Tooling",
+      "description": "User uses Docker for containers and Terraform for infrastructure.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_024",
+          "speaker": "User",
+          "text": "I use Docker for containerization.",
+          "timestamp": "2022-03-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_024",
+          "speaker": "User",
+          "text": "I use Terraform for managing cloud infrastructure.",
+          "timestamp": "2023-01-15T12:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "uses_tool", "object": "Docker" },
+        { "subject": "User", "predicate": "uses_tool", "object": "Terraform" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What DevOps tools do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Docker", "Terraform"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_025",
+      "category": "repeated_facts",
+      "title": "Idempotent Framework Reaffirmation",
+      "description": "User re-states their current framework across sessions; graph must not create duplicate active edges or close interval.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_025_a",
+          "speaker": "User",
+          "text": "My backend framework is FastAPI.",
+          "timestamp": "2024-01-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_025_b",
+          "speaker": "User",
+          "text": "Just confirming, my backend framework is FastAPI.",
+          "timestamp": "2024-03-15T11:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "backend_framework", "object": "FastAPI" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What framework do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["FastAPI"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_026",
+      "category": "repeated_facts",
+      "title": "Idempotent Residence Confirmation",
+      "description": "User reiterates living in Tokyo; verifies single active edge count = 1.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_026_a",
+          "speaker": "User",
+          "text": "Bob moved to Tokyo in 2024.",
+          "timestamp": "2024-01-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_026_b",
+          "speaker": "User",
+          "text": "Bob still lives in Tokyo.",
+          "timestamp": "2024-06-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Bob", "predicate": "lives_in", "object": "Tokyo" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where does Bob live?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Tokyo"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_027",
+      "category": "repeated_facts",
+      "title": "Verbatim Turn Duplication",
+      "description": "Exact same turn repeated back-to-back due to network retry.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_027",
+          "speaker": "User",
+          "text": "Diana upgraded to a MacBook Pro M3.",
+          "timestamp": "2024-03-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_027",
+          "speaker": "User",
+          "text": "Diana upgraded to a MacBook Pro M3.",
+          "timestamp": "2024-03-01T10:00:05Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Diana", "predicate": "uses_hardware", "object": "MacBook Pro M3" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What hardware does Diana use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["MacBook Pro M3"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_028",
+      "category": "ambiguous_inputs",
+      "title": "Future Hypothetical Intention",
+      "description": "User states an intention for the future ('I might move to Seattle next winter') which must not overwrite current residence.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_028",
+          "speaker": "User",
+          "text": "I live in Chicago.",
+          "timestamp": "2023-01-10T10:00:00Z"
+        },
+        {
+          "session_id": "sess_028",
+          "speaker": "User",
+          "text": "I might move to Seattle next winter if I get the job.",
+          "timestamp": "2023-08-15T14:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "lives_in", "object": "Chicago" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where do I live right now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Chicago"],
+          "forbidden_keywords": ["Seattle is where you live now"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_029",
+      "category": "ambiguous_inputs",
+      "title": "Conversational Chit-Chat Filler",
+      "description": "Turn contains conversational courtesies without any extractable factual knowledge.",
+      "difficulty": "standard",
+      "episode_sequence": [
+        {
+          "session_id": "sess_029",
+          "speaker": "User",
+          "text": "Sounds good, thanks for the update! Talk to you later.",
+          "timestamp": "2024-04-10T09:00:00Z"
+        }
+      ],
+      "expected_active_facts": [],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What are my facts?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["No verified facts", "do not have"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_030",
+      "category": "ambiguous_inputs",
+      "title": "Question Disguised as Utterance",
+      "description": "User asks a question; engine must not extract the query predicate as a committed fact.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_030",
+          "speaker": "User",
+          "text": "Do I use GraphQL or REST APIs for our microservices?",
+          "timestamp": "2024-02-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What API architecture do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["No verified facts", "not recorded"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_031",
+      "category": "ambiguous_inputs",
+      "title": "Conditional Corporate Plan",
+      "description": "Statement contains conditional clauses that should not be extracted as active historical facts.",
+      "difficulty": "complex",
+      "episode_sequence": [
+        {
+          "session_id": "sess_031",
+          "speaker": "User",
+          "text": "If we close Series A, we plan on hiring 10 backend engineers in London.",
+          "timestamp": "2024-05-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where is our team located?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["No verified facts", "not recorded"],
+          "forbidden_keywords": ["10 backend engineers currently in London"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_032",
+      "category": "adversarial",
+      "title": "Intra-Utterance Self-Correction",
+      "description": "User self-corrects contradictory claim in the very same sentence.",
+      "difficulty": "adversarial",
+      "episode_sequence": [
+        {
+          "session_id": "sess_032",
+          "speaker": "User",
+          "text": "I work at Meta, wait actually I left Meta and joined Anthropic as a researcher.",
+          "timestamp": "2024-03-10T12:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "works_at", "object": "Anthropic" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where do I work now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Anthropic"],
+          "forbidden_keywords": ["Meta is current"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_033",
+      "category": "adversarial",
+      "title": "Out-of-Order Temporal Backfill",
+      "description": "User reports modern 2024 fact first, then later reveals a historical 2019 fact.",
+      "difficulty": "adversarial",
+      "episode_sequence": [
+        {
+          "session_id": "sess_033",
+          "speaker": "User",
+          "text": "I switched my backend framework to FastAPI.",
+          "timestamp": "2024-03-01T10:00:00Z"
+        },
+        {
+          "session_id": "sess_033",
+          "speaker": "User",
+          "text": "Before that back in 2019, my backend framework was Flask.",
+          "timestamp": "2024-04-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "backend_framework", "object": "FastAPI" }
+      ],
+      "expected_historical_facts": [
+        { "subject": "User", "predicate": "backend_framework", "object": "Flask" }
+      ],
+      "expected_contradictions": 1,
+      "expected_test_queries": [
+        {
+          "query": "What framework do I use now?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["FastAPI"],
+          "forbidden_keywords": ["Flask is your current"]
+        },
+        {
+          "query": "What framework did I use before?",
+          "target_temporal_state": "historical",
+          "expected_keywords": ["Flask"],
+          "forbidden_keywords": []
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_034",
+      "category": "adversarial",
+      "title": "Multi-Entity Relocation Distractor",
+      "description": "Utterance mentions both Alice and Bob living in different cities in one turn.",
+      "difficulty": "adversarial",
+      "episode_sequence": [
+        {
+          "session_id": "sess_034",
+          "speaker": "User",
+          "text": "Alice moved to Berlin in 2021, but Bob told Alice that he lives in Madrid.",
+          "timestamp": "2021-08-15T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "Alice", "predicate": "lives_in", "object": "Berlin" },
+        { "subject": "Bob", "predicate": "lives_in", "object": "Madrid" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "Where does Alice live?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Berlin"],
+          "forbidden_keywords": ["Madrid"]
+        },
+        {
+          "query": "Where does Bob live?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Madrid"],
+          "forbidden_keywords": ["Berlin"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scen_035",
+      "category": "adversarial",
+      "title": "Direct Negation and Replacement",
+      "description": "User states negation of past tool and current tool in one breath.",
+      "difficulty": "adversarial",
+      "episode_sequence": [
+        {
+          "session_id": "sess_035",
+          "speaker": "User",
+          "text": "I don't use React anymore, I use Svelte for all my frontend development.",
+          "timestamp": "2024-05-01T10:00:00Z"
+        }
+      ],
+      "expected_active_facts": [
+        { "subject": "User", "predicate": "frontend_framework", "object": "Svelte" }
+      ],
+      "expected_historical_facts": [],
+      "expected_contradictions": 0,
+      "expected_test_queries": [
+        {
+          "query": "What frontend framework do I use?",
+          "target_temporal_state": "current",
+          "expected_keywords": ["Svelte"],
+          "forbidden_keywords": ["React is current"]
+        }
+      ]
+    }
+  ]
+}

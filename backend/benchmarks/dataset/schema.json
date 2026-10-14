@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChronosBenchmarkDataset",
+  "type": "object",
+  "required": ["version", "scenarios"],
+  "properties": {
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "target_total_capacity": { "type": "integer" },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scenario_id",
+          "category",
+          "title",
+          "description",
+          "episode_sequence",
+          "expected_active_facts",
+          "expected_historical_facts",
+          "expected_test_queries"
+        ],
+        "properties": {
+          "scenario_id": { "type": "string" },
+          "category": { 
+            "type": "string",
+            "enum": [
+              "software_stacks",
+              "location_changes",
+              "employment",
+              "projects",
+              "non_conflicting_additions",
+              "repeated_facts",
+              "ambiguous_inputs",
+              "adversarial"
+            ]
+          },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "difficulty": { "type": "string", "enum": ["standard", "complex", "adversarial"] },
+          "episode_sequence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["session_id", "speaker", "text", "timestamp"],
+              "properties": {
+                "session_id": { "type": "string" },
+                "speaker": { "type": "string" },
+                "text": { "type": "string" },
+                "timestamp": { "type": "string" }
+              }
+            }
+          },
+          "expected_active_facts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["subject", "predicate", "object"],
+              "properties": {
+                "subject": { "type": "string" },
+                "predicate": { "type": "string" },
+                "object": { "type": "string" }
+              }
+            }
+          },
+          "expected_historical_facts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["subject", "predicate", "object"],
+              "properties": {
+                "subject": { "type": "string" },
+                "predicate": { "type": "string" },
+                "object": { "type": "string" }
+              }
+            }
+          },
+          "expected_contradictions": { "type": "integer" },
+          "expected_test_queries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["query", "target_temporal_state"],
+              "properties": {
+                "query": { "type": "string" },
+                "target_temporal_state": { 
+                  "type": "string",
+                  "enum": ["current", "historical", "point_in_time", "evolution"]
+                },
+                "expected_keywords": { "type": "array", "items": { "type": "string" } },
+                "forbidden_keywords": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

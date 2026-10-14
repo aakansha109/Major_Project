@@ -1,0 +1,59 @@
+# Chronos Memory Git Ignore
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.cert
+secrets.json
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.eggs/
+
+# Node.js & Frontend Build
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/
+build/
+dist/
+
+# Local Databases & Persistent Data
+data/*.db
+data/*.sqlite
+backend/data/*.db
+backend/data/*.sqlite
+*.db-shm
+*.db-wal
+**/benchmarks/results/benchmark_run_*.json
+**/benchmarks/results/benchmark_run_*.csv
+**/benchmarks/results/temp_*.json
+**/benchmarks/results/temp_*.csv
+*.tsbuildinfo
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
