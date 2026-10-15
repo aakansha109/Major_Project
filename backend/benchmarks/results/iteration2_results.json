@@ -1,0 +1,1795 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-10-14T21:38:43.176315+00:00",
+    "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "package_versions": {
+      "fastapi": "0.143.1",
+      "pydantic": "2.14.1",
+      "neo4j": "6.4.0",
+      "httpx": "0.28.1",
+      "uvicorn": "0.54.0",
+      "pytest": "9.1.1",
+      "numpy": "2.5.4",
+      "mem0ai": "not_installed",
+      "graphiti-core": "not_installed"
+    },
+    "llm_model": "gpt-4o-mini",
+    "llm_provider_url": "https://api.openai.com/v1",
+    "neo4j_uri": "bolt://localhost:7687",
+    "confidence_threshold": 0.8,
+    "pricing_basis": "GPT-4o-mini reference rate: $0.15/1M input tokens, $0.60/1M output tokens"
+  },
+  "total_scenarios_evaluated": 35,
+  "strategies_evaluated": {
+    "chronos_hybrid": {
+      "status": "completed",
+      "is_live_provider": false,
+      "scenario_count": 35,
+      "summary_metrics": {
+        "active_facts_precision": 0.878,
+        "active_facts_recall": 0.9474,
+        "active_facts_f1": 0.9114,
+        "historical_facts_precision": 0.7778,
+        "historical_facts_recall": 0.7778,
+        "historical_facts_f1": 0.7778,
+        "overall_f1": 0.8696,
+        "total_queries": 43,
+        "passed_queries": 39,
+        "query_accuracy": 0.907,
+        "stale_fact_error_count": 0,
+        "stale_fact_error_rate": 0.0,
+        "rule_extractions_count": 63,
+        "llm_fallback_count": 0,
+        "rule_bypass_rate": 1.0,
+        "tokens": {
+          "input_tokens": 7002,
+          "output_tokens": 645,
+          "total_tokens": 7647,
+          "tokens_is_measured": false
+        },
+        "total_cost_usd": 0.001437,
+        "ingest_latency": {
+          "mean_ms": 7.52,
+          "median_ms": 0.32,
+          "p95_ms": 30.39,
+          "max_ms": 30.75
+        },
+        "query_latency": {
+          "mean_ms": 2.83,
+          "median_ms": 2.22,
+          "p95_ms": 7.93,
+          "max_ms": 9.87
+        }
+      },
+      "scenarios": [
+        {
+          "scenario_id": "scen_001",
+          "category": "software_stacks",
+          "title": "Backend Framework Migration",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What backend framework do I use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is FastAPI (Previously: Flask) (active since 2024-03-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What framework did I use before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2022-01-15 to 2024-03-01), you used Flask (This was superseded by your current backend framework, FastAPI).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_002",
+          "category": "software_stacks",
+          "title": "Database Architecture Migration",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What database do we use now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use DynamoDB (Previously: PostgreSQL) as database.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What database did we use previously?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2021-06-10 to 2023-11-20), you used PostgreSQL (This was superseded by your current database, DynamoDB). as database",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_003",
+          "category": "software_stacks",
+          "title": "Frontend Framework Evolution",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What frontend framework do we use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current frontend framework is Next.js (Previously: Vue.js) (active since 2024-05-12).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_004",
+          "category": "software_stacks",
+          "title": "Cloud Provider Switch",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What cloud provider do we run on now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current cloud provider is Google Cloud (Previously: AWS).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_005",
+          "category": "software_stacks",
+          "title": "Primary Language Modernization",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What language do I write Android apps in now?",
+              "target_temporal_state": "current",
+              "model_answer": "User currently primary language Kotlin (active since 2022-07-20).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_006",
+          "category": "location_changes",
+          "title": "International Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Alice live now?",
+              "target_temporal_state": "current",
+              "model_answer": "Alice currently lives in London (Previously: Seattle) (since 2023-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where did Alice live previously?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2020-01-01 to 2023-01-01), Alice lived in Seattle (This was superseded by your current lives in, London).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_007",
+          "category": "location_changes",
+          "title": "Multi-Hop Global Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 430,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob live now?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Tokyo (Previously: Berlin) (since 2024-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Show the history of where Bob lived.",
+              "target_temporal_state": "evolution",
+              "model_answer": "Chronological history of Bob's attribute:\n1. New York (Valid: 2018-05-01 to 2021-01-01) [superseded]\n2. Berlin (Valid: 2021-01-01 to 2024-01-01) [superseded]\n3. Tokyo (Valid: 2024-01-01 to present (ongoing)) [active]",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_008",
+          "category": "location_changes",
+          "title": "Temporary Vacation vs Permanent Residence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 401,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Chicago (since 2023-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_009",
+          "category": "location_changes",
+          "title": "Corporate Office Transfer",
+          "active_f1": 0.6667,
+          "historical_f1": 0.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which office does Elena work at now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Elena works at the Mountain View office.",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_010",
+          "category": "location_changes",
+          "title": "Remote Work Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Denver (Previously: San Francisco) (since 2024-04-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_011",
+          "category": "employment",
+          "title": "Tech Employer Transition",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob work now?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently works at OpenAI (Previously: Google) (since 2024-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where did Bob work before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2019-01-01 to 2024-01-01), Bob worked at Google (This was superseded by your current works at, OpenAI).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_012",
+          "category": "employment",
+          "title": "Internal Role Promotion",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 430,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is Charlie's role now?",
+              "target_temporal_state": "current",
+              "model_answer": "Charlie currently holds the role of Engineering Manager.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_013",
+          "category": "employment",
+          "title": "Corporate Resignation",
+          "active_f1": 0.0,
+          "historical_f1": 0.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where did Ian work in 2021?",
+              "target_temporal_state": "point_in_time",
+              "model_answer": "As of 2021, Ian worked at Microsoft (valid from 2020-04-01 to present).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_014",
+          "category": "employment",
+          "title": "Academic Appointment",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 870,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is John Smith's role now?",
+              "target_temporal_state": "current",
+              "model_answer": "John Smith currently holds the role of Head of AI Research.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_015",
+          "category": "employment",
+          "title": "Startup Founder Transition",
+          "active_f1": 0.0,
+          "historical_f1": 0.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Maya work now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Maya works at Stripe and founded ChronosAI as CEO.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_016",
+          "category": "projects",
+          "title": "Project Lead Assignment",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who is leading Project Apollo?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Evan leads project Apollo.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_017",
+          "category": "projects",
+          "title": "Project Handover",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 870,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which project does Evan lead now?",
+              "target_temporal_state": "current",
+              "model_answer": "Evan currently leads project Artemis (active since 2024-04-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Who leads Project Apollo now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Diana leads project Apollo.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_018",
+          "category": "projects",
+          "title": "Project Deprecation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 431,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is the status of Project Titan now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Project Titan status deprecated.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_019",
+          "category": "projects",
+          "title": "Cross-Functional Working Group",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 433,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who leads the Security Guild?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Rachel leads group Security Guild.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_020",
+          "category": "non_conflicting_additions",
+          "title": "Multi-Language Skill Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What languages do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Rust and Python.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_021",
+          "category": "non_conflicting_additions",
+          "title": "Hardware Device Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 868,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What hardware equipment do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Dell UltraSharp 4K and MacBook Pro M3.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_022",
+          "category": "non_conflicting_additions",
+          "title": "Concurrent Multi-Repo Contribution",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which repositories do I maintain?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently maintains repo chronos-web and chronos-core.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_023",
+          "category": "non_conflicting_additions",
+          "title": "Family Relations Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who is George married to?",
+              "target_temporal_state": "current",
+              "model_answer": "George currently married to Hannah (active since 2021-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_024",
+          "category": "non_conflicting_additions",
+          "title": "Dual DevOps Tooling",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What DevOps tools do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Terraform and Docker.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_025",
+          "category": "repeated_facts",
+          "title": "Idempotent Framework Reaffirmation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What framework do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is FastAPI (active since 2024-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_026",
+          "category": "repeated_facts",
+          "title": "Idempotent Residence Confirmation",
+          "active_f1": 0.6667,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob live?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Tokyo (since 2024-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_027",
+          "category": "repeated_facts",
+          "title": "Verbatim Turn Duplication",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What hardware does Diana use?",
+              "target_temporal_state": "current",
+              "model_answer": "Diana currently uses MacBook Pro M3.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_028",
+          "category": "ambiguous_inputs",
+          "title": "Future Hypothetical Intention",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 404,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live right now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Chicago (since 2023-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_029",
+          "category": "ambiguous_inputs",
+          "title": "Conversational Chit-Chat Filler",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 402,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What are my facts?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on conversation episode from 2024-04-10: \"Sounds good, thanks for the update! Talk to you later.\"",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_030",
+          "category": "ambiguous_inputs",
+          "title": "Question Disguised as Utterance",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 402,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What API architecture do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on conversation episode from 2024-02-01: \"Do I use GraphQL or REST APIs for our microservices?\"",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_031",
+          "category": "ambiguous_inputs",
+          "title": "Conditional Corporate Plan",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 406,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where is our team located?",
+              "target_temporal_state": "current",
+              "model_answer": "I do not have verified memory records in the temporal knowledge graph or conversation history to answer this question.",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_032",
+          "category": "adversarial",
+          "title": "Intra-Utterance Self-Correction",
+          "active_f1": 1.0,
+          "historical_f1": 0.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I work now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently work at Anthropic (Previously: Meta) (since 2024-03-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_033",
+          "category": "adversarial",
+          "title": "Out-of-Order Temporal Backfill",
+          "active_f1": 0.0,
+          "historical_f1": 0.0,
+          "tokens_used": 435,
+          "cost_usd": 8.6e-05,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What framework do I use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is Flask (Previously: FastAPI) (active since 2024-04-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What framework did I use before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2024-03-01 to 2024-04-01), you used FastAPI (This was superseded by your current backend framework, Flask).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_034",
+          "category": "adversarial",
+          "title": "Multi-Entity Relocation Distractor",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Alice live?",
+              "target_temporal_state": "current",
+              "model_answer": "Alice currently lives in Berlin (since 2021-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where does Bob live?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Madrid (since 2021-08-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_035",
+          "category": "adversarial",
+          "title": "Direct Negation and Replacement",
+          "active_f1": 1.0,
+          "historical_f1": 0.0,
+          "tokens_used": 0,
+          "cost_usd": 0.0,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What frontend framework do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current frontend framework is Svelte (active since 2024-05-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        }
+      ]
+    },
+    "always_llm": {
+      "status": "completed",
+      "is_live_provider": false,
+      "scenario_count": 35,
+      "summary_metrics": {
+        "active_facts_precision": 0.925,
+        "active_facts_recall": 0.9737,
+        "active_facts_f1": 0.9487,
+        "historical_facts_precision": 0.9412,
+        "historical_facts_recall": 0.8889,
+        "historical_facts_f1": 0.9143,
+        "overall_f1": 0.9381,
+        "total_queries": 43,
+        "passed_queries": 40,
+        "query_accuracy": 0.9302,
+        "stale_fact_error_count": 0,
+        "stale_fact_error_rate": 0.0,
+        "rule_extractions_count": 0,
+        "llm_fallback_count": 63,
+        "rule_bypass_rate": 0.0,
+        "tokens": {
+          "input_tokens": 24425,
+          "output_tokens": 2637,
+          "total_tokens": 27062,
+          "tokens_is_measured": false
+        },
+        "total_cost_usd": 0.005246,
+        "ingest_latency": {
+          "mean_ms": 26.41,
+          "median_ms": 26.38,
+          "p95_ms": 29.58,
+          "max_ms": 45.19
+        },
+        "query_latency": {
+          "mean_ms": 2.88,
+          "median_ms": 1.82,
+          "p95_ms": 9.44,
+          "max_ms": 15.84
+        }
+      },
+      "scenarios": [
+        {
+          "scenario_id": "scen_001",
+          "category": "software_stacks",
+          "title": "Backend Framework Migration",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 862,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What backend framework do I use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is FastAPI (Previously: Flask) (active since 2024-03-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What framework did I use before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2022-01-15 to 2024-03-01), you used Flask (This was superseded by your current backend framework, FastAPI).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_002",
+          "category": "software_stacks",
+          "title": "Database Architecture Migration",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 869,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What database do we use now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use DynamoDB (Previously: PostgreSQL) as database.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What database did we use previously?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2021-06-10 to 2023-11-20), you used PostgreSQL (This was superseded by your current database, DynamoDB). as database",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_003",
+          "category": "software_stacks",
+          "title": "Frontend Framework Evolution",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 866,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What frontend framework do we use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current frontend framework is Next.js (Previously: Vue.js) (active since 2024-05-12).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_004",
+          "category": "software_stacks",
+          "title": "Cloud Provider Switch",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What cloud provider do we run on now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current cloud provider is Google Cloud (Previously: AWS).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_005",
+          "category": "software_stacks",
+          "title": "Primary Language Modernization",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What language do I write Android apps in now?",
+              "target_temporal_state": "current",
+              "model_answer": "User currently primary language Kotlin (active since 2022-07-20).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_006",
+          "category": "location_changes",
+          "title": "International Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 862,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Alice live now?",
+              "target_temporal_state": "current",
+              "model_answer": "Alice currently lives in London (Previously: Seattle) (since 2023-04-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where did Alice live previously?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2020-02-01 to 2023-04-15), Alice lived in Seattle (This was superseded by your current lives in, London).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_007",
+          "category": "location_changes",
+          "title": "Multi-Hop Global Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 1292,
+          "cost_usd": 0.000255,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob live now?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Tokyo (Previously: Berlin) (since 2024-02-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Show the history of where Bob lived.",
+              "target_temporal_state": "evolution",
+              "model_answer": "Chronological history of Bob's attribute:\n1. New York (Valid: 2018-05-01 to 2021-08-10) [superseded]\n2. Berlin (Valid: 2021-08-10 to 2024-02-15) [superseded]\n3. Tokyo (Valid: 2024-02-15 to present (ongoing)) [active]",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_008",
+          "category": "location_changes",
+          "title": "Temporary Vacation vs Permanent Residence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 830,
+          "cost_usd": 0.00015,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Chicago (since 2023-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_009",
+          "category": "location_changes",
+          "title": "Corporate Office Transfer",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 863,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which office does Elena work at now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Elena office location Zurich.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_010",
+          "category": "location_changes",
+          "title": "Remote Work Relocation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Denver (Previously: San Francisco) (since 2024-04-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_011",
+          "category": "employment",
+          "title": "Tech Employer Transition",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 860,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob work now?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently works at OpenAI (Previously: Google) (since 2024-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where did Bob work before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2019-06-01 to 2024-01-10), Bob worked at Google (This was superseded by your current works at, OpenAI).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_012",
+          "category": "employment",
+          "title": "Internal Role Promotion",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 861,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is Charlie's role now?",
+              "target_temporal_state": "current",
+              "model_answer": "Charlie currently holds the role of Engineering Manager.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_013",
+          "category": "employment",
+          "title": "Corporate Resignation",
+          "active_f1": 0.0,
+          "historical_f1": 0.0,
+          "tokens_used": 859,
+          "cost_usd": 0.000169,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where did Ian work in 2021?",
+              "target_temporal_state": "point_in_time",
+              "model_answer": "As of 2021, Ian worked at Microsoft (valid from 2020-04-01 to present).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_014",
+          "category": "employment",
+          "title": "Academic Appointment",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 870,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is John Smith's role now?",
+              "target_temporal_state": "current",
+              "model_answer": "John Smith currently holds the role of Head of AI Research.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_015",
+          "category": "employment",
+          "title": "Startup Founder Transition",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 867,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Maya work now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Maya works at ChronosAI.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_016",
+          "category": "projects",
+          "title": "Project Lead Assignment",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 431,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who is leading Project Apollo?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Evan leads project Apollo.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_017",
+          "category": "projects",
+          "title": "Project Handover",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 870,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which project does Evan lead now?",
+              "target_temporal_state": "current",
+              "model_answer": "Evan currently leads project Artemis (active since 2024-04-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Who leads Project Apollo now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Diana leads project Apollo.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_018",
+          "category": "projects",
+          "title": "Project Deprecation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 864,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What is the status of Project Titan now?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Project Titan status deprecated.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_019",
+          "category": "projects",
+          "title": "Cross-Functional Working Group",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 433,
+          "cost_usd": 8.5e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who leads the Security Guild?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on memory records, Rachel leads group Security Guild.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_020",
+          "category": "non_conflicting_additions",
+          "title": "Multi-Language Skill Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What languages do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Rust and Python.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_021",
+          "category": "non_conflicting_additions",
+          "title": "Hardware Device Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 868,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What hardware equipment do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Dell UltraSharp 4K and MacBook Pro M3.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_022",
+          "category": "non_conflicting_additions",
+          "title": "Concurrent Multi-Repo Contribution",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 866,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Which repositories do I maintain?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently maintains repo chronos-web and chronos-core.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_023",
+          "category": "non_conflicting_additions",
+          "title": "Family Relations Coexistence",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 865,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Who is George married to?",
+              "target_temporal_state": "current",
+              "model_answer": "George currently married to Hannah (active since 2021-08-20).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_024",
+          "category": "non_conflicting_additions",
+          "title": "Dual DevOps Tooling",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 862,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What DevOps tools do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently use Terraform and Docker.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_025",
+          "category": "repeated_facts",
+          "title": "Idempotent Framework Reaffirmation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 829,
+          "cost_usd": 0.00015,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What framework do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is FastAPI (active since 2024-03-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_026",
+          "category": "repeated_facts",
+          "title": "Idempotent Residence Confirmation",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 861,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Bob live?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Tokyo (since 2024-01-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_027",
+          "category": "repeated_facts",
+          "title": "Verbatim Turn Duplication",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 864,
+          "cost_usd": 0.00017,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What hardware does Diana use?",
+              "target_temporal_state": "current",
+              "model_answer": "Diana currently uses MacBook Pro M3.",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_028",
+          "category": "ambiguous_inputs",
+          "title": "Future Hypothetical Intention",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 833,
+          "cost_usd": 0.000151,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I live right now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently live in Chicago (since 2023-01-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_029",
+          "category": "ambiguous_inputs",
+          "title": "Conversational Chit-Chat Filler",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 402,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What are my facts?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on conversation episode from 2024-04-10: \"Sounds good, thanks for the update! Talk to you later.\"",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_030",
+          "category": "ambiguous_inputs",
+          "title": "Question Disguised as Utterance",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 402,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What API architecture do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Based on conversation episode from 2024-02-01: \"Do I use GraphQL or REST APIs for our microservices?\"",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_031",
+          "category": "ambiguous_inputs",
+          "title": "Conditional Corporate Plan",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 406,
+          "cost_usd": 6.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 0,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where is our team located?",
+              "target_temporal_state": "current",
+              "model_answer": "I do not have verified memory records in the temporal knowledge graph or conversation history to answer this question.",
+              "passed": false,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_032",
+          "category": "adversarial",
+          "title": "Intra-Utterance Self-Correction",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 440,
+          "cost_usd": 8.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where do I work now?",
+              "target_temporal_state": "current",
+              "model_answer": "You currently work at Anthropic (since 2024-03-10).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_033",
+          "category": "adversarial",
+          "title": "Out-of-Order Temporal Backfill",
+          "active_f1": 0.0,
+          "historical_f1": 0.0,
+          "tokens_used": 867,
+          "cost_usd": 0.000171,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What framework do I use now?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current backend framework is Flask (Previously: FastAPI) (active since 2024-04-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "What framework did I use before?",
+              "target_temporal_state": "historical",
+              "model_answer": "Previously (from 2024-03-01 to 2024-04-01), you used FastAPI (This was superseded by your current backend framework, Flask).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_034",
+          "category": "adversarial",
+          "title": "Multi-Entity Relocation Distractor",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 440,
+          "cost_usd": 8.6e-05,
+          "queries_evaluated": 2,
+          "queries_passed": 2,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "Where does Alice live?",
+              "target_temporal_state": "current",
+              "model_answer": "Alice currently lives in Berlin (since 2021-08-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            },
+            {
+              "query": "Where does Bob live?",
+              "target_temporal_state": "current",
+              "model_answer": "Bob currently lives in Madrid (since 2021-08-15).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "scenario_id": "scen_035",
+          "category": "adversarial",
+          "title": "Direct Negation and Replacement",
+          "active_f1": 1.0,
+          "historical_f1": 1.0,
+          "tokens_used": 438,
+          "cost_usd": 8.6e-05,
+          "queries_evaluated": 1,
+          "queries_passed": 1,
+          "stale_errors": 0,
+          "query_details": [
+            {
+              "query": "What frontend framework do I use?",
+              "target_temporal_state": "current",
+              "model_answer": "Your current frontend framework is Svelte (active since 2024-05-01).",
+              "passed": true,
+              "stale_fact_error": false,
+              "reasons": []
+            }
+          ]
+        }
+      ]
+    },
+    "mem0": {
+      "status": "not_run",
+      "reason": "Dependency 'mem0ai' is not installed in the python environment.",
+      "is_live_provider": true,
+      "scenario_count": 0,
+      "summary_metrics": {}
+    },
+    "graphiti": {
+      "status": "not_run",
+      "reason": "Dependency 'graphiti-core' is not installed in the python environment.",
+      "is_live_provider": true,
+      "scenario_count": 0,
+      "summary_metrics": {}
+    }
+  }
+}

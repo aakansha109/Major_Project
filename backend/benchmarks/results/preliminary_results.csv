@@ -1,0 +1,5 @@
+strategy,status,is_live_provider,scenarios_count,active_f1,historical_f1,overall_f1,query_accuracy,stale_fact_errors,total_tokens,tokens_is_measured,cost_usd,mean_ingest_ms,p95_ingest_ms,rule_bypass_rate
+chronos_hybrid,completed,False,35,0.7619,0.6207,0.7257,0.6512,1,9815,False,0.001864,8.77,30.12,1.0
+always_llm,completed,False,35,0.8675,0.6667,0.8142,0.7674,0,27062,False,0.005246,25.37,29.65,0.0
+mem0,not_run,True,0,0.0,0.0,0.0,0.0,0,0,False,0.0,0.0,0.0,0.0
+graphiti,not_run,True,0,0.0,0.0,0.0,0.0,0,0,False,0.0,0.0,0.0,0.0

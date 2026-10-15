@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-10-14T21:41:46.918311+00:00",
+    "scenarios_evaluated": 35,
+    "thresholds_tested": [
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.99
+    ],
+    "recommended_threshold": 0.6,
+    "model": "gpt-4o-mini",
+    "pricing_basis": "GPT-4o-mini reference rate: $0.15/1M input tokens, $0.60/1M output tokens"
+  },
+  "results": [
+    {
+      "threshold": 0.6,
+      "overall_f1": 0.8696,
+      "active_facts_f1": 0.9114,
+      "historical_facts_f1": 0.7778,
+      "query_accuracy": 0.907,
+      "stale_fact_errors": 0,
+      "rule_extractions": 45,
+      "llm_fallbacks": 18,
+      "fallback_rate": 0.2857,
+      "total_tokens": 7647,
+      "tokens_is_measured": false,
+      "cost_usd": 0.001437,
+      "mean_ingest_lat_ms": 7.17,
+      "p95_ingest_lat_ms": 27.87
+    },
+    {
+      "threshold": 0.7,
+      "overall_f1": 0.8696,
+      "active_facts_f1": 0.9114,
+      "historical_facts_f1": 0.7778,
+      "query_accuracy": 0.907,
+      "stale_fact_errors": 0,
+      "rule_extractions": 45,
+      "llm_fallbacks": 18,
+      "fallback_rate": 0.2857,
+      "total_tokens": 7647,
+      "tokens_is_measured": false,
+      "cost_usd": 0.001437,
+      "mean_ingest_lat_ms": 6.95,
+      "p95_ingest_lat_ms": 27.2
+    },
+    {
+      "threshold": 0.8,
+      "overall_f1": 0.8696,
+      "active_facts_f1": 0.9114,
+      "historical_facts_f1": 0.7778,
+      "query_accuracy": 0.907,
+      "stale_fact_errors": 0,
+      "rule_extractions": 45,
+      "llm_fallbacks": 18,
+      "fallback_rate": 0.2857,
+      "total_tokens": 7647,
+      "tokens_is_measured": false,
+      "cost_usd": 0.001437,
+      "mean_ingest_lat_ms": 7.35,
+      "p95_ingest_lat_ms": 27.06
+    },
+    {
+      "threshold": 0.9,
+      "overall_f1": 0.8696,
+      "active_facts_f1": 0.9114,
+      "historical_facts_f1": 0.7778,
+      "query_accuracy": 0.907,
+      "stale_fact_errors": 0,
+      "rule_extractions": 45,
+      "llm_fallbacks": 18,
+      "fallback_rate": 0.2857,
+      "total_tokens": 7647,
+      "tokens_is_measured": false,
+      "cost_usd": 0.001437,
+      "mean_ingest_lat_ms": 6.86,
+      "p95_ingest_lat_ms": 27.57
+    },
+    {
+      "threshold": 0.99,
+      "overall_f1": 0.9381,
+      "active_facts_f1": 0.9487,
+      "historical_facts_f1": 0.9143,
+      "query_accuracy": 0.9302,
+      "stale_fact_errors": 0,
+      "rule_extractions": 0,
+      "llm_fallbacks": 63,
+      "fallback_rate": 1.0,
+      "total_tokens": 27062,
+      "tokens_is_measured": false,
+      "cost_usd": 0.005246,
+      "mean_ingest_lat_ms": 26.09,
+      "p95_ingest_lat_ms": 29.46
+    }
+  ]
+}
