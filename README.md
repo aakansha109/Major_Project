@@ -105,66 +105,7 @@ Chronos Memory introduces a multi-tiered, cost-efficient temporal graph architec
 ├── docker-compose.yml      # Single-command orchestration (Neo4j, Backend, Frontend)
 ├── .env.example            # Environment template
 └── README.md               # Documentation
-```
 
----
-
-## 4. Quick Start & Execution
-
-### Option A: Local Development (Recommended for rapid testing)
-
-#### 1. Backend Setup
-```bash
-# Navigate to backend and activate venv
-cd backend
-python -m venv venv
-# On Windows:
-venv\Scripts\activate
-# On Linux/macOS:
-# source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run Backend Server (Runs on port 8000)
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-```
-Backend Swagger API Documentation is accessible at: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-#### 2. Frontend Setup
-```bash
-# In a separate terminal, navigate to frontend
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start Next.js development server
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-### Option B: Docker Compose (Full Stack with Neo4j)
-
-Ensure Docker Desktop is running:
-```bash
-# Start Neo4j, FastAPI Backend, and Next.js Frontend
-docker compose up --build
-```
-- **Frontend Dashboard**: [http://localhost:3000](http://localhost:3000)
-- **Backend API & Swagger**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **Neo4j Browser Console**: [http://localhost:7474](http://localhost:7474) (User: `neo4j`, Password: `chronos_memory_2026`)
-
----
-
-## 5. Verification & Testing
-
-Run the automated backend test suite:
-```bash
-cd backend
-venv\Scripts\pytest.exe -v
 ```
 
 All 7 test suites pass (45 passed, 1 skipped due to live provider requirement):
@@ -190,7 +131,7 @@ python scripts/e2e_user_verification.py
 
 ---
 
-## 6. Reproducible Benchmark Pipeline & Empirical Evaluation
+## 4. Reproducible Benchmark Pipeline & Empirical Evaluation
 
 Chronos Memory includes a reproducible research evaluation pipeline designed to evaluate conversational memory systems across multi-turn scenarios under identical conditions.
 
@@ -214,28 +155,6 @@ Each scenario explicitly defines:
 
 ---
 
-### Running the Command-Line Benchmark Runner
-
-Run the benchmark from the `backend/` directory:
-
-```bash
-cd backend
-
-# 1. Run all 35 scenarios across all baselines
-venv\Scripts\python.exe run_benchmark.py
-
-# 2. Run a specific category (e.g. software_stacks)
-venv\Scripts\python.exe run_benchmark.py --category software_stacks
-
-# 3. Limit to the first N scenarios
-venv\Scripts\python.exe run_benchmark.py --limit 10
-
-# 4. Filter strategies
-venv\Scripts\python.exe run_benchmark.py --strategies chronos_hybrid,always_llm
-
-# 5. Verbose output with detailed query inspection
-venv\Scripts\python.exe run_benchmark.py --verbose
-```
 
 ### Baseline Handling Policy
 - **Chronos Hybrid**: Always operational. Uses deterministic rules first and confidence-gated LLM fallback when confidence $< \tau$ ($0.80$).
@@ -261,9 +180,6 @@ The table below contrasts the preliminary baseline results with the post-audit *
 | **Mean Ingest Latency** | 7.9 ms | **7.2 ms** (3.6x speedup) | 26.4 ms |
 | **Rule Bypass Rate** | 71.4% | **71.4%** (28.6% fallback) | 0.0% |
 
-> [!NOTE]
-> **Token Accounting Note**: When running offline without a live provider key, tokens are calculated by the standardized tokenizer-based simulator (`tokens_is_measured = False`). With a live provider, provider usage headers are captured and recorded with `tokens_is_measured = True`. Cost basis is documented as reference GPT-4o-mini rates ($0.15/1M input, $0.60/1M output). Original preliminary results are preserved in `preliminary_results.json` and new iteration results are saved separately in `iteration2_results.json`.
-
 ---
 
 ### Cost-versus-Quality Threshold Sweep Experiment (`benchmarks/experiments/threshold_sweep.py`)
@@ -283,28 +199,6 @@ To evaluate the trade-off between rule confidence gating and extraction quality,
 
 ---
 
-### Exact Reproduction Commands
-
-```bash
-cd backend
-
-# 1. Run complete pytest test suite
-venv\Scripts\python.exe -m pytest -v
-
-# 2. Run temporal validity regression test suite
-venv\Scripts\python.exe -m pytest tests/test_temporal_research_validity.py -v
-
-# 3. Run the reproducible benchmark (Iteration 2)
-venv\Scripts\python.exe -m benchmarks.run_benchmark
-
-# 4. Run the Cost-vs-Quality threshold sweep experiment
-venv\Scripts\python.exe -m benchmarks.experiments.threshold_sweep
-
-# 5. Run end-to-end 5-point verification script
-python ../scripts/e2e_user_verification.py
-```
-
----
 
 ### Limitations & Scope
 1. **Third-Party Baseline Dependencies**: Mem0 (`mem0ai`) and Graphiti (`graphiti-core`) require external Python packages and live API keys; when uninstalled or unconfigured, the benchmark runner truthfully reports their status as `not_run` rather than fabricating simulated baseline metrics.
