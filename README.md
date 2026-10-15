@@ -216,7 +216,7 @@ The benchmark can also be triggered and inspected programmatically:
 
 ---
 
-## 7. License
+## 5. License
 
 MIT License. Designed and developed as a B.Tech CSE (AI & ML) Major Project.
 
